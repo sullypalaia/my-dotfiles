@@ -1,14 +1,12 @@
 return {
-  {
-    "catppuccin/nvim", 
-    name = "catppuccin-nvim", 
-    priority = 1000,
-    config = function()
-      require("catppuccin").setup({
-        flavour = "mocha",
-	transparent_background = true
-      })
-      vim.cmd.colorscheme("catppuccin-nvim")
-    end
-  }
+  "catppuccin/nvim", 
+  name = "catppuccin-nvim", 
+  priority = 1000,
+  config = function()
+    require("catppuccin").setup({
+    flavour = "mocha",
+    transparent_background = true
+    })
+    vim.cmd.colorscheme("catppuccin-nvim")
+  end
 }
