@@ -1,0 +1,8 @@
+{
+  "plugins": {
+    "nui.nvim": {
+      "rev": "a25dd472316d806eb38a5dd667c2e40da5570c75",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
+    }
+  }
+}

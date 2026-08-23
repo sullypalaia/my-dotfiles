@@ -1,26 +1,18 @@
 return {
     "jake-stewart/multicursor.nvim",
     branch = "1.0",
-    keys = {
-      {"<up>", desc = "add cursor to above line" },
-      {"<down>", desc = "add cursor to below line" },
-      {"<leader>n", desc = "add cursor to next word matching current word"},
-      {"<leader>N", desc = "add cursor to last word matching current word"},
-      {"<leader>A", desc = "add cursor to every word that matches current word"},
-      {"<c-leftmouse>", desc = "remove cursor below mouse on click"}
-    },
     config = function()
         local mc = require("multicursor-nvim")
         mc.setup()
 
         local set = vim.keymap.set
 
-        set({"n", "x"}, "<up>", function() mc.lineAddCursor(-1) end)
-        set({"n", "x"}, "<down>", function() mc.lineAddCursor(1) end)
-        set({"n", "x"}, "<leader>n", function() mc.matchAddCursor(1) end)
-        set({"n", "x"}, "<leader>N", function() mc.matchAddCursor(-1) end)
-        set({"n", "x"}, "<leader>A", function() mc.matchAllAddCursors() end)
-        set({"n", "x"}, "<c-leftmouse>", function() mc.handleMouse() end)
+        set({"n", "x"}, "<up>", function() mc.lineAddCursor(-1) end, {desc = "add cursor to above line"})
+        set({"n", "x"}, "<down>", function() mc.lineAddCursor(1) end, {desc = "add cursor to below line"})
+        set({"n", "x"}, "<leader>n", function() mc.matchAddCursor(1) end, {desc = "add cursor to next word matching current word"})
+        set({"n", "x"}, "<leader>N", function() mc.matchAddCursor(-1) end, {desc = "add cursor to last word matching current word"})
+        set({"n", "x"}, "<leader>A", function() mc.matchAllAddCursors() end, {desc = "add cursor to every word that matches current word"})
+        set({"n", "x"}, "<c-leftmouse>", function() mc.handleMouse() end, {desc = "remove cursor below mouse on click"})
 
         mc.addKeymapLayer(function(layerSet)
 
