@@ -15,3 +15,5 @@ vim.opt.undofile = true
 vim.opt.undodir = undodir
 
 vim.opt.wrap = false
+
+vim.opt.splitright = true

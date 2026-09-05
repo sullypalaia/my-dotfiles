@@ -1,22 +1,6 @@
-vim.api.nvim_create_autocmd(
-  "FileType",
-  {
-    pattern = "lua",
-    callback = function()
-      vim.lsp.enable("lua_ls")
-    end
-  }
-)
-
-vim.api.nvim_create_autocmd(
-  "FileType",
-  {
-    pattern = { "cpp", "cppm", "h", "hpp", "cc", "cxx" },
-    callback = function()
-      vim.lsp.enable("clangd")
-    end
-  }
-)
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("clangd")
+vim.lsp.enable("tsc")
 
 vim.lsp.config("clangd", {
   cmd = {
@@ -25,7 +9,10 @@ vim.lsp.config("clangd", {
   }
 })
 
-vim.opt.completeopt:prepend("noselect")
+vim.opt.completeopt:append("noselect")
+vim.opt.completeopt:append("fuzzy")
+
+vim.opt.complete:append('o')
 
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
