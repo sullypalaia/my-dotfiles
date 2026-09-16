@@ -1,11 +1,19 @@
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("clangd")
 vim.lsp.enable("tsc")
+vim.lsp.enable("cmake")
 
 vim.lsp.config("clangd", {
   cmd = {
     "clangd",
     "--experimental-modules-support"
+  }
+})
+
+vim.lsp.config("cmake", {
+  cmd = {
+    "neocmakelsp",
+    "stdio"
   }
 })
 

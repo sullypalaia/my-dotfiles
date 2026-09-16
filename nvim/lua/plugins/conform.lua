@@ -3,7 +3,8 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
-      cpp = { "clang_format" }
+      cpp = { "clang_format" },
+      cmake = { "cmake_format" }
     },
 
     format_on_save = {
