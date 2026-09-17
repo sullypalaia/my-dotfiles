@@ -19,5 +19,5 @@ vim.keymap.set("n", "<Leader>t", function()
   vim.cmd("startinsert")
 end)
 
---close the terminal window with <Leader>t
-vim.keymap.set("t", "<Leader>t", "<cmd>close<cr>")
+--exit insert mode in the terminal
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
